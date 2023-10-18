@@ -1,5 +1,4 @@
-// console.log(asabenehChallenges2020);
-
+// Request Data from the server
 const client = new Client(asabenehChallenges2020);
 
 const dataInfos = client.getDataInfos();
@@ -7,161 +6,46 @@ const challenges = client.getChallenges();
 const author = client.getAuthor();
 const keywords = client.getKeywords();
 
-document.body.style.fontFamily = fontFamily;
-document.body.style.textAlign = 'center';
-
 const challengeTitle = dataInfos.challengeTitle; 
 const challengeYear = dataInfos.challengeYear;
 const challengeSubtitle = dataInfos.challengeSubtitle;
 
-let colorIndex = 0;
-let indexColor = 1;
+document.body.style.fontFamily = fontFamily;
+document.body.style.textAlign = 'center';
 
-function yearAppearance() {
-    year.style.color = arrayOfColors[colorIndex];
-    colorIndex = (colorIndex + 1) % arrayOfColors.length;
-};
+const subTitle = createSubTitle();
+const dateTitle = createDateTitle();
 
-setInterval(yearAppearance, 1000);
-setTimeout(yearAppearance, 0);
+const wrapper = createWrapper(challenges);
 
-const subTitle = document.createElement('h2');
-subTitle.textContent = challengeSubtitle;
-subTitle.style.textDecoration = 'underline';
-subTitle.style.fontWeight = '100';
+const authorDiv = createAuthor(author)
+
+const socialMedias = createSocialMedias();
+const linkedin = createSocialMedia('fa-linkedin', 'fab', 'https://www.linkedin.com/in/asabeneh/');
+const twitter = createSocialMedia('fa-twitter-square', 'fab', 'https://twitter.com/Asabeneh');
+const github = createSocialMedia('fa-github-square', 'fab', 'https://github.com/Asabeneh');
+
+const bio = createBio(author);
+
+const titlesDiv = document.createElement('div');
+const titlesList = createTitles(author);
+const titlesLabel = createTitlesLabel();
+
 document.body.appendChild(subTitle);
-
-const dateTitle = document.createElement('p');
-dateTitle.textContent = createDate();
 document.body.appendChild(dateTitle);
-
-function dateAppearance() {
-    dateTitle.style.padding = '.8rem';
-    dateTitle.style.margin = '0 40% 0 40%';
-    dateTitle.style.fontSize = 'small';
-    dateTitle.style.backgroundColor = arrayOfColors[indexColor];
-    indexColor = (indexColor + 1) % arrayOfColors.length;
-};
-
-setInterval(dateAppearance, 1000);
-setTimeout(dateAppearance, 0);
-
-const wrapper = document.querySelector('.wrapper');
-
-for (let i = 0; i < challenges.length; i++) {
-    const box = document.createElement('div');
-    const name = challenges[i].name;
-    const topics = challenges[i].topics;
-    const status = challenges[i].status;
-
-    const nameElement = document.createElement('p');
-    nameElement.textContent = name;
-    nameElement.style.textAlign = 'left';
-
-    const detailsElement = document.createElement('details');
-    const firstElement = document.createElement('summary');
-    firstElement.textContent = ` ${topics[0]}`;
-    firstElement.style.cursor = 'pointer';
-    firstElement.style.fontWeight = 'bold';
-    firstElement.style.textAlign = 'left'
-    detailsElement.appendChild(firstElement);
-
-    const topicsList = document.createElement('ul');
-
-        for (let i = 0; i < topics.length; i++) {
-            const topicItem = document.createElement('li');
-            topicItem.textContent = topics[i];
-            topicItem.style.listStyle = 'none';
-            topicItem.style.textAlign = 'left';
-            topicItem.style.marginLeft = '-38%';
-            topicsList.appendChild(topicItem);
-        };
-
-    detailsElement.appendChild(topicsList);
-
-    const statusElement = document.createElement('p');
-    statusElement.textContent = status;
-    statusElement.style.textAlign = 'left';
-
-    if (status === 'Done') {
-        box.style.backgroundColor = '#21BF73';
-        nameElement.style.textDecoration = 'underline';
-    } else if (status === 'Ongoing') {
-        box.style.backgroundColor = '#FCDB3A';
-        nameElement.style.textDecoration = 'underline';
-    } else if (status === 'Coming') {
-        box.style.backgroundColor = '#FD5E53';
-    };
-
-    box.appendChild(nameElement);
-    box.appendChild(detailsElement);
-    box.appendChild(statusElement);
-
-    box.style.display = 'grid';
-    box.style.width = '58%';
-    box.style.gridTemplateColumns = '220px 150px 90px';
-    box.style.alignItems = 'center';
-    box.style.justifyContent = 'space-between';
-    box.style.padding = '1.5rem';
-    box.style.margin = '.3% 20% .3% 20%';
-
-    wrapper.appendChild(box);
-};
-
 document.body.appendChild(wrapper);
-wrapper.style.marginTop = '2rem';
-
-const authorName = `${author.firstName} ${author.lastName}`;
-
-const authorDiv = document.createElement('div');
-authorDiv.textContent = authorName;
-authorDiv.style.fontSize = '1.8rem';
-authorDiv.style.fontWeight = 'bold';
-authorDiv.style.marginTop = '2rem';
 document.body.appendChild(authorDiv);
-
-const socialMedias = document.createElement('div');
-socialMedias.style.margin = '.5rem';
-socialMedias.style.fontSize = '2.5rem';
-
-const linkedin = document.createElement('i');
-linkedin.classList.add('fab', 'fa-linkedin'); 
-linkedin.style.margin = '.4rem';
-linkedin.style.cursor = 'pointer';
-linkedin.addEventListener('click', () => {
-    window.open('https://www.linkedin.com/in/asabeneh/', '_blank');
-});
-
-const twitter = document.createElement('i');
-twitter.classList.add('fab', 'fa-twitter-square');
-twitter.style.margin = '.4rem';
-twitter.style.cursor = 'pointer';
-twitter.addEventListener('click', () => {
-    window.open('https://twitter.com/Asabeneh', '_blank');
-});
-
-const github = document.createElement('i');
-github.classList.add('fab', 'fa-github-square');
-github.style.margin = '.4rem';
-github.style.cursor = 'pointer';
-github.addEventListener('click', () => {
-    window.open('https://github.com/Asabeneh', '_blank');
-});
 
 socialMedias.appendChild(linkedin);
 socialMedias.appendChild(twitter);
 socialMedias.appendChild(github);
 document.body.appendChild(socialMedias);
 
-
-const authorDescription = author.bio;
-const bio = document.createElement('p');
-bio.textContent = authorDescription;
 document.body.appendChild(bio);
-bio.style.margin = '2% 20% 2% 20%';
-bio.style.padding = '1rem';
 
-const professionalTitles = author.titles;
+titlesDiv.appendChild(titlesLabel);
+titlesDiv.appendChild(titlesList);
+
 const professionalSkills = author.skills;
 const professionalQualifications = author.qualifications;
 
@@ -169,22 +53,6 @@ const professionalPartDiv = document.createElement('div');
 professionalPartDiv.style.display = 'flex';
 professionalPartDiv.style.justifyContent = 'center';
 professionalPartDiv.style.marginTop = '3rem';
-
-const titlesDiv = document.createElement('div');
-const titlesList = document.createElement('ul');
-
-professionalTitles.forEach(title => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${title[0]} ${title[1]}`;
-    listItem.style.listStyle = 'none';
-    listItem.style.textAlign = 'left';
-    titlesList.appendChild(listItem);
-});
-
-const titlesLabel = document.createElement('strong');
-titlesLabel.textContent = 'Titles ';
-titlesDiv.appendChild(titlesLabel);
-titlesDiv.appendChild(titlesList);
 
 const skillsDiv = document.createElement('div');
 const skillsList = document.createElement('ul');
