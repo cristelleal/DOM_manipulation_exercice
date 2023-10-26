@@ -36,13 +36,13 @@ function createWrapper(challenges) {
     statusElement.textContent = status;
     statusElement.style.textAlign = "left";
 
-    if (status === "Done") {
+    if (status === Status.DONE) {
       box.style.backgroundColor = "#21BF73";
       nameElement.style.textDecoration = "underline";
-    } else if (status === "Ongoing") {
+    } else if (status === Status.ONGOING) {
       box.style.backgroundColor = "#FCDB3A";
       nameElement.style.textDecoration = "underline";
-    } else if (status === "Coming") {
+    } else if (status === Status.COMING) {
       box.style.backgroundColor = "#FD5E53";
     }
 
