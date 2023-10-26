@@ -1,10 +1,10 @@
 function createTitles(author) {
-    const titlesList = document.createElement('ul');
-    const professionalTitles = author.titles;
+  const titlesList = document.createElement("ul");
+  const professionalTitles = author.titles;
 
-    professionalTitles.forEach(title => {
-        const listItem = createTitle(title);
-        titlesList.appendChild(listItem);
-    });
-    return titlesList;
+  professionalTitles.forEach((title) => {
+    const listItem = createTitle(title);
+    titlesList.appendChild(listItem);
+  });
+  return titlesList;
 }
