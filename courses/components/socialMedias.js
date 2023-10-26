@@ -1,7 +1,7 @@
 function socialMedias() {
-  const socialMedias = document.createElement("div");
-  socialMedias.style.margin = ".5rem";
-  socialMedias.style.fontSize = "2.5rem";
-
-  return socialMedias;
+  const socialMediaDiv = document.createElement("div");
+  socialMediaDiv.style.margin = ".5rem";
+  socialMediaDiv.style.fontSize = "2.5rem";
+  
+  return socialMediaDiv;
 }

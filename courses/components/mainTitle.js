@@ -1,5 +1,5 @@
 function createMainTitle() {
     const mainTitle = document.createElement('h1');
-    mainTitle.textContent = `${challengeTitle} in `;
+    mainTitle.textContent = challengeTitle;
     return mainTitle;
 }
