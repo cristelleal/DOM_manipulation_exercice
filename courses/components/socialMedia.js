@@ -1,6 +1,6 @@
-function createSocialMedia({ icon, className, link }) {
+function createSocialMedia({ className, link }) {
   const socialMedia = document.createElement("i");
-  socialMedia.className.add(className, icon);
+  socialMedia.className = className;
   socialMedia.style.margin = ".4rem";
   socialMedia.style.cursor = "pointer";
   socialMedia.addEventListener("click", () => {
