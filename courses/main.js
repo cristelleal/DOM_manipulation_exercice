@@ -14,15 +14,6 @@ const challengeTitle = dataInfos.challengeTitle;
 const challengeYear = dataInfos.challengeYear;
 const challengeSubtitle = dataInfos.challengeSubtitle;
 
-const mainTitle = document.createElement('h1');
-mainTitle.textContent = `${challengeTitle} in `;
-document.body.appendChild(mainTitle);
-
-const year = document.createElement('span');
-year.textContent = challengeYear;
-year.style.fontSize = '6.2rem';
-mainTitle.appendChild(year);
-
 let colorIndex = 0;
 let indexColor = 1;
 
