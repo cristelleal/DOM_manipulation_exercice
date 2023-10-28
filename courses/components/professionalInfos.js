@@ -1,4 +1,4 @@
-function professionalInfos() {
+export function professionalInfos() {
   const professionalPartDiv = document.createElement("div");
   professionalPartDiv.style.display = "flex";
   professionalPartDiv.style.justifyContent = "center";

@@ -1,4 +1,7 @@
-function createYearSpan() {
+import { challengeYear } from '/courses/main.js';
+import { arrayOfColors } from '/courses/constants.js';
+
+export function createYearSpan() {
   const year = document.createElement("span");
   year.textContent = challengeYear;
   year.style.fontSize = "6.2rem";

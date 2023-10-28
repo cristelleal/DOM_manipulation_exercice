@@ -1,4 +1,6 @@
-function createSubTitle() {
+import { challengeSubtitle } from "/courses/main.js";
+
+export function createSubTitle() {
   const subTitle = document.createElement("h2");
   subTitle.textContent = challengeSubtitle;
   subTitle.style.textDecoration = "underline";

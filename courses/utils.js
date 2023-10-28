@@ -1,4 +1,4 @@
-function createDate() {
+export function createDate() {
   const now = new Date();
   const months = [
     "January",
@@ -20,5 +20,21 @@ function createDate() {
   const hour = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
-  return (currentDate = `${month} ${day}, ${year} ${hour}:${minutes}:${seconds}`);
+  return `${month} ${day}, ${year} ${hour}:${minutes}:${seconds}`;
 }
+
+export function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+export const challengeStatus = {
+  DONE: "Done",
+  ONGOING: "Ongoing",
+  COMING: "Coming",
+};

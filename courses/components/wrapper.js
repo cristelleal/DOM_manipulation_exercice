@@ -1,4 +1,6 @@
-function createWrapper(challenges) {
+import { challengeStatus } from "/courses/utils.js";
+
+export function createWrapper(challenges) {
   const wrapper = document.querySelector(".wrapper");
 
   for (let i = 0; i < challenges.length; i++) {
@@ -36,13 +38,13 @@ function createWrapper(challenges) {
     statusElement.textContent = status;
     statusElement.style.textAlign = "left";
 
-    if (status === "Done") {
+    if (status === challengeStatus.DONE) {
       box.style.backgroundColor = "#21BF73";
       nameElement.style.textDecoration = "underline";
-    } else if (status === "Ongoing") {
+    } else if (status === challengeStatus.ONGOING) {
       box.style.backgroundColor = "#FCDB3A";
       nameElement.style.textDecoration = "underline";
-    } else if (status === "Coming") {
+    } else if (status === challengeStatus.COMING) {
       box.style.backgroundColor = "#FD5E53";
     }
 

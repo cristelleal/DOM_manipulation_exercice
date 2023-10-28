@@ -1,20 +1,13 @@
-function allKeywords() {
+import { keywords } from '/courses/main.js';
+import { getRandomColor } from '/courses/utils.js'
+
+export function allKeywords() {
   const keywordsListDiv = document.createElement("div");
   keywordsListDiv.style.margin = "1% 17% 2% 17%";
   keywordsListDiv.style.display = "flex";
   keywordsListDiv.style.flexWrap = "wrap";
   keywordsListDiv.style.justifyContent = "center";
   keywordsListDiv.style.alignItems = "center";
-
-  function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
 
   keywords.forEach((keyword) => {
     const keywordSpan = document.createElement("span");
