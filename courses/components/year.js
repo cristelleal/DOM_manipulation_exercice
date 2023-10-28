@@ -1,5 +1,5 @@
-import { challengeYear } from '/courses/main.js';
-import { arrayOfColors } from '/courses/constants.js';
+import { challengeYear } from '../main.js';
+import { arrayOfColors } from '../constants.js';
 
 export function createYearSpan() {
   const year = document.createElement("span");

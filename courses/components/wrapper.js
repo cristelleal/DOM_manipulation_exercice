@@ -1,4 +1,4 @@
-import { challengeStatus } from "/courses/utils.js";
+import { Status } from "../constants.js";
 
 export function createWrapper(challenges) {
   const wrapper = document.querySelector(".wrapper");

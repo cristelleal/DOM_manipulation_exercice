@@ -1,4 +1,4 @@
-import { createTitle } from '/courses/components/title.js';
+import { createTitle } from '../components/title.js';
 
 export function createTitles(author) {
   const titlesList = document.createElement("ul");

@@ -23,7 +23,7 @@ export function createDate() {
   return `${month} ${day}, ${year} ${hour}:${minutes}:${seconds}`;
 }
 
-function getRandomColor() {
+export function getRandomColor() {
   let color = "#";
 
   for (let i = 0; i < 6; i++) {

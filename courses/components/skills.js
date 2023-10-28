@@ -1,4 +1,4 @@
-import { author } from '/courses/main.js';
+import { author } from '../main.js';
 
 export function skills() {
   const professionalSkills = author.skills;

@@ -1,5 +1,5 @@
-import { createDate } from "/courses/utils.js";
-import { arrayOfColors } from "/courses/constants.js";
+import { createDate } from "../utils.js";
+import { arrayOfColors } from "../constants.js";
 
 export function createDateTitle() {
   const dateTitle = document.createElement("p");

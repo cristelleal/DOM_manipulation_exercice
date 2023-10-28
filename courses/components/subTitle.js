@@ -1,4 +1,4 @@
-import { challengeSubtitle } from "/courses/main.js";
+import { challengeSubtitle } from "../main.js";
 
 export function createSubTitle() {
   const subTitle = document.createElement("h2");

@@ -1,5 +1,4 @@
-import { keywords } from '/courses/main.js';
-import { getRandomColor } from '/courses/utils.js'
+import { keywords } from '../main.js';
 
 export function allKeywords() {
   const keywordsListDiv = document.createElement("div");
