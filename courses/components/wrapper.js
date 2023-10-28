@@ -1,4 +1,6 @@
-function createWrapper(challenges) {
+import { Status } from "../constants.js";
+
+export function createWrapper(challenges) {
   const wrapper = document.querySelector(".wrapper");
 
   for (let i = 0; i < challenges.length; i++) {

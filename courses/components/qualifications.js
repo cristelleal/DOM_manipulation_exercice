@@ -1,4 +1,6 @@
-function qualificationsPart() {
+import { author } from "../main.js";
+
+export function qualificationsPart() {
   const professionalQualifications = author.qualifications;
 
   const qualificationsDiv = document.createElement("div");

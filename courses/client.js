@@ -1,4 +1,4 @@
-class Client {
+export class Client {
   constructor(data) {
     this.data = data;
   }
@@ -28,3 +28,4 @@ class Client {
     return this.data.keywords;
   }
 }
+

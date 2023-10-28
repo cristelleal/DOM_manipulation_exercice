@@ -1,4 +1,4 @@
-function createDate() {
+export function createDate() {
   const now = new Date();
   const months = [
     "January",
@@ -20,10 +20,10 @@ function createDate() {
   const hour = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
-  return (currentDate = `${month} ${day}, ${year} ${hour}:${minutes}:${seconds}`);
+  return `${month} ${day}, ${year} ${hour}:${minutes}:${seconds}`;
 }
 
-function getRandomColor() {
+export function getRandomColor() {
   let color = "#";
 
   for (let i = 0; i < 6; i++) {

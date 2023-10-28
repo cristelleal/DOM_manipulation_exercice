@@ -1,4 +1,4 @@
-function createBio(author) {
+export function createBio(author) {
   const authorDescription = author.bio;
   const bio = document.createElement("p");
   bio.textContent = authorDescription;

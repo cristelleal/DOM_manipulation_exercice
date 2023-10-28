@@ -1,4 +1,6 @@
-function createTitles(author) {
+import { createTitle } from '../components/title.js';
+
+export function createTitles(author) {
   const titlesList = document.createElement("ul");
   const professionalTitles = author.titles;
 
