@@ -1,4 +1,6 @@
-function skills() {
+import { author } from '/courses/main.js';
+
+export function skills() {
   const professionalSkills = author.skills;
 
   const skillsDiv = document.createElement("div");

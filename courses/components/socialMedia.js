@@ -1,4 +1,4 @@
-function createSocialMedia({ className, link }) {
+export function createSocialMedia({ className, link }) {
   const socialMedia = document.createElement("i");
   socialMedia.className = className;
   socialMedia.style.margin = ".4rem";

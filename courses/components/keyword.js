@@ -1,4 +1,7 @@
-function allKeywords() {
+import { keywords } from '/courses/main.js';
+import { getRandomColor } from '/courses/utils.js'
+
+export function allKeywords() {
   const keywordsListDiv = document.createElement("div");
   keywordsListDiv.style.margin = "1% 17% 2% 17%";
   keywordsListDiv.style.display = "flex";

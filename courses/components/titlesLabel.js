@@ -1,4 +1,4 @@
-function createTitlesLabel() {
+export function createTitlesLabel() {
   const titlesLabel = document.createElement("strong");
   titlesLabel.textContent = "Titles ";
 

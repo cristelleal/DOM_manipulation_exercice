@@ -1,4 +1,4 @@
-function createTitle(title) {
+export function createTitle(title) {
   const titleItem = document.createElement("li");
   titleItem.textContent = `${title[0]} ${title[1]}`;
   titleItem.style.listStyle = "none";

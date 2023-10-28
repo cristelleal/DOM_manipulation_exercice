@@ -1,4 +1,4 @@
-function createAuthor(author) {
+export function createAuthor(author) {
   const authorDiv = document.createElement("div");
   const authorName = `${author.firstName} ${author.lastName}`;
   authorDiv.textContent = authorName;

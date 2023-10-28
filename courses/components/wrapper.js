@@ -1,4 +1,6 @@
-function createWrapper(challenges) {
+import { challengeStatus } from "/courses/utils.js";
+
+export function createWrapper(challenges) {
   const wrapper = document.querySelector(".wrapper");
 
   for (let i = 0; i < challenges.length; i++) {
